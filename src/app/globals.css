@@ -1,0 +1,441 @@
+:root {
+  --navy: #16324f;
+  --blue: #2878a8;
+  --sky: #e7f4fa;
+  --orange: #f18f3b;
+  --cream: #fffaf2;
+  --text: #263442;
+  --muted: #65717c;
+  --border: #dce5e9;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #f3f7f8;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.hero {
+  padding: 64px 20px 56px;
+  color: var(--white);
+  text-align: center;
+  background:
+    linear-gradient(rgba(16, 57, 83, 0.76), rgba(16, 57, 83, 0.88)),
+    linear-gradient(135deg, #3da2c7, #1b4c70);
+}
+
+.heroContent {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #bfe8f7;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.8rem);
+  line-height: 1.25;
+}
+
+.heroDate {
+  margin: 18px 0;
+  font-weight: 700;
+}
+
+.destinationList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.destinationList span {
+  padding: 5px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.familyNote {
+  margin: 20px 0 0;
+  color: #d9f1f8;
+}
+
+.navigation {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.navigation a {
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  background: var(--sky);
+}
+
+.container {
+  width: min(920px, calc(100% - 28px));
+  margin: 30px auto 64px;
+}
+
+.card,
+.dayCard {
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(40, 67, 82, 0.07);
+}
+
+.card {
+  padding: 26px;
+}
+
+.card,
+.dayCard,
+section {
+  scroll-margin-top: 76px;
+}
+
+.intro h2 {
+  margin-top: 0;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.overviewGrid div {
+  padding: 18px 12px;
+  border-radius: 14px;
+  text-align: center;
+  background: var(--cream);
+}
+
+.overviewGrid strong,
+.overviewGrid p {
+  display: block;
+}
+
+.overviewGrid p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.overviewIcon {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.sectionHeading {
+  margin: 44px 0 18px;
+}
+
+.card .sectionHeading {
+  margin-top: 0;
+}
+
+.sectionHeading p {
+  margin: 0;
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.sectionHeading h2 {
+  margin: 2px 0 0;
+  color: var(--navy);
+  font-size: 1.75rem;
+}
+
+.dayHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+}
+
+.dayNumber {
+  min-width: 66px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: var(--orange);
+  font-weight: 800;
+}
+
+.dayHeader h3,
+.dayHeader p {
+  margin: 0;
+}
+
+.dayHeader h3 {
+  font-size: 1.3rem;
+}
+
+.dayHeader p {
+  color: #d4eaf4;
+}
+
+.timeline {
+  padding: 24px;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 100px 22px 1fr;
+  min-height: 105px;
+}
+
+.time {
+  padding-top: 1px;
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.timelineMarker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timelineMarker::after {
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  width: 2px;
+  content: "";
+  background: #cde2eb;
+}
+
+.timelineItem:last-child .timelineMarker::after {
+  display: none;
+}
+
+.timelineMarker span {
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 2px var(--orange);
+}
+
+.event {
+  padding: 0 0 26px 14px;
+}
+
+.eventHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.event h4 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.06rem;
+}
+
+.event p {
+  margin: 5px 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.area {
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: #236684;
+  background: var(--sky);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.mapLink {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mapLink:hover {
+  text-decoration: underline;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.progressBar {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8eef0;
+}
+
+.progressBar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--orange), #f6bd60);
+  transition: width 0.2s ease;
+}
+
+.checkList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.checkList label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  background: #fbfdfd;
+}
+
+.checkList label.checked {
+  color: var(--muted);
+  background: #f0f5f5;
+  text-decoration: line-through;
+}
+
+.checkList input {
+  width: 19px;
+  height: 19px;
+  accent-color: var(--orange);
+}
+
+.storageNote {
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.notes {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.notes li {
+  margin: 8px 0;
+}
+
+footer {
+  padding: 35px 20px;
+  color: #d5e8f0;
+  text-align: center;
+  background: var(--navy);
+}
+
+footer p {
+  margin: 0;
+  font-weight: 800;
+}
+
+footer small {
+  color: #a9cedc;
+}
+
+@media (max-width: 650px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding: 20px 15px;
+  }
+
+  .timelineItem {
+    grid-template-columns: 78px 18px 1fr;
+  }
+
+  .event {
+    padding-left: 10px;
+  }
+
+  .checkList {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navigation a {
+    padding: 7px 12px;
+  }
+
+  .timelineItem {
+    grid-template-columns: 68px 16px 1fr;
+  }
+
+  .time {
+    font-size: 0.78rem;
+  }
+}
