@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   basePath: `/${repo}`,
   assetPrefix: `/${repo}/`,
   images: {
-    unoptimized: true,
-  },
+    unoptimized: true
+  }
 };
 
 export default nextConfig;
