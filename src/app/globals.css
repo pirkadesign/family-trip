@@ -33,17 +33,34 @@ a {
 }
 
 .hero {
-  padding: 64px 20px 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: auto;
+  aspect-ratio: 16 / 9;
+  padding: 40px 20px;
+  overflow: hidden;
   color: var(--white);
   text-align: center;
-  background:
-    linear-gradient(rgba(16, 57, 83, 0.76), rgba(16, 57, 83, 0.88)),
-    linear-gradient(135deg, #3da2c7, #1b4c70);
+  background-color: var(--navy);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .heroContent {
-  max-width: 920px;
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
   margin: 0 auto;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: rgba(10, 35, 53, 0.28);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(3px);
 }
 
 .eyebrow {
@@ -398,7 +415,41 @@ footer small {
 
 @media (max-width: 650px) {
   .hero {
-    padding-top: 48px;
+    min-height: 430px;
+    aspect-ratio: auto;
+    padding: 24px 14px;
+    background-position: center top;
+    background-size: contain;
+  }
+
+  .heroContent {
+    width: 100%;
+    padding: 20px 14px;
+    border-radius: 18px;
+    background: rgba(10, 35, 53, 0.48);
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 8vw, 2.4rem);
+  }
+
+  .heroDate {
+    margin: 12px 0;
+    font-size: 0.9rem;
+  }
+
+  .destinationList {
+    gap: 6px;
+  }
+
+  .destinationList span {
+    padding: 3px 10px;
+    font-size: 0.82rem;
+  }
+
+  .familyNote {
+    margin-top: 13px;
+    font-size: 0.9rem;
   }
 
   .overviewGrid {
@@ -427,6 +478,23 @@ footer small {
 }
 
 @media (max-width: 400px) {
+  .hero {
+    min-height: 390px;
+    padding: 18px 10px;
+  }
+
+  .heroContent {
+    padding: 16px 10px;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 1.55rem;
+  }
+
   .navigation a {
     padding: 7px 12px;
   }
