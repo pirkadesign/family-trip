@@ -172,6 +172,7 @@ export default function Home() {
 
   useEffect(() => {
     const savedItems = window.localStorage.getItem("family-trip-packing");
+
     if (savedItems) {
       try {
         setCheckedItems(JSON.parse(savedItems));
@@ -179,6 +180,7 @@ export default function Home() {
         setCheckedItems([]);
       }
     }
+
     setIsLoaded(true);
   }, []);
 
@@ -205,11 +207,20 @@ export default function Home() {
 
   return (
     <main>
-      <header className="hero">
+      <header
+        className="hero"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(12, 42, 63, 0.38), rgba(12, 42, 63, 0.88)), url('/family-trip/travel-cover.png')",
+        }}
+      >
         <div className="heroContent">
           <p className="eyebrow">FAMILY TRIP 2026</p>
           <h1>シルバーウィーク家族旅行</h1>
-          <p className="heroDate">2026年9月20日（日）〜9月22日（火・祝）</p>
+          <p className="heroDate">
+            2026年9月20日（日）〜9月22日（火・祝）
+          </p>
+
           <div className="destinationList">
             <span>伊達</span>
             <span>室蘭</span>
@@ -217,7 +228,8 @@ export default function Home() {
             <span>白老</span>
             <span>苫小牧</span>
           </div>
-          <p className="familyNote">8歳・4歳の男の子と楽しむ3日間</p>
+
+          <p className="familyNote">みんなで楽しむステキな3日間</p>
         </div>
       </header>
 
@@ -230,17 +242,20 @@ export default function Home() {
       <div className="container">
         <section className="intro card">
           <h2>旅の概要</h2>
+
           <div className="overviewGrid">
             <div>
               <span className="overviewIcon">📅</span>
               <strong>2泊3日</strong>
               <p>9月20日〜22日</p>
             </div>
+
             <div>
               <span className="overviewIcon">🏠</span>
               <strong>宿泊</strong>
               <p>室蘭ユースホステル</p>
             </div>
+
             <div>
               <span className="overviewIcon">🚗</span>
               <strong>移動</strong>
@@ -259,6 +274,7 @@ export default function Home() {
             <article className="dayCard" key={day.date}>
               <header className="dayHeader">
                 <div className="dayNumber">{day.label}</div>
+
                 <div>
                   <h3>{day.date}</h3>
                   <p>{day.theme}</p>
@@ -269,15 +285,20 @@ export default function Home() {
                 {day.items.map((item, index) => (
                   <div className="timelineItem" key={`${item.time}-${index}`}>
                     <div className="time">{item.time}</div>
+
                     <div className="timelineMarker" aria-hidden="true">
                       <span />
                     </div>
+
                     <div className="event">
                       <div className="eventHeading">
                         <h4>{item.title}</h4>
+
                         {item.area && <span className="area">{item.area}</span>}
                       </div>
+
                       {item.detail && <p>{item.detail}</p>}
+
                       {item.mapQuery && (
                         <a
                           className="mapLink"
@@ -308,9 +329,11 @@ export default function Home() {
             </span>
             <strong>{progress}%</strong>
           </div>
+
           <div
             className="progressBar"
             role="progressbar"
+            aria-label="持ち物の準備状況"
             aria-valuenow={progress}
             aria-valuemin={0}
             aria-valuemax={100}
